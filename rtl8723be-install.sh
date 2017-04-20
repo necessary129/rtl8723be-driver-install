@@ -1,6 +1,6 @@
 # install additional dependencies
 
-sudo apt-get install linux-firmware linux-headers-$(uname -r) gcc g++ build-essential dkms git
+sudo pacman -S linux-firmware linux-headers gcc g++ build-essential dkms git
 
 # clone latest drivers
 
@@ -9,7 +9,7 @@ git clone https://github.com/lwfinger/rtlwifi_new.git
 # make and install realtek driver
 
 cd rtlwifi_new
-make -j2
+make -j$(nproc)
 sudo make install
 
 
